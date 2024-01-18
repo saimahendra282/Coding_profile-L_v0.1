@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Certificates</title>
+</head>
+
+<body>
+    <h1>Hello, welcome to my certificates page</h1>
+    <p>These are all my learnings up to now</p>
+
+    <!-- Coursera Logo 1 -->
+    <img src="sai.png" alt="Coursera Logo 1" style="width: 100px; height: 100px; cursor: pointer;"
+        onclick="showCertificateDetails('Domain 1')">
+
+    <!-- Coursera Logo 2 -->
+    <img src="coursera_logo_2.png" alt="Coursera Logo 2" style="width: 100px; height: 100px; cursor: pointer;"
+        onclick="showCertificateDetails('Domain 2')">
+
+    <!-- Add more Coursera Logos as needed -->
+
+    <script>
+        function showCertificateDetails(domain) {
+            // You can replace the alert with actual logic to display details or redirect to the certificate page
+            alert("You clicked on " + domain + " certificate. Redirecting...");
+            // Replace the following line with actual URL for redirection
+            window.location.href = "https://coursera.org/share/db906c9216252182fc9016b8fc3ab8dc" + encodeURIComponent(domain);
+        }
+    </script>
+</body>
+
+</html>

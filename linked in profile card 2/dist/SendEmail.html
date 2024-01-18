@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail form</title>
+</head>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ecf0f3;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #ecf0f3;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    border-radius: 10px;
+    padding: 20px; /* Decreased padding */
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 23px;
+    font-weight: 500;
+    color: #31344b;
+    margin: 10px 0 15px 0; /* Decreased margin */
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+.form-input {
+    margin-bottom: 15px; /* Decreased margin */
+}
+
+label {
+    color: #31344b;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px; /* Decreased padding */
+    border: none;
+    border-radius: 5px;
+    box-shadow: -2px 2px 5px #ceced1;
+    margin-top: 5px;
+    margin-bottom: 10px; /* Decreased margin */
+}
+
+button {
+    width: 100%;
+    padding: 10px 0; /* Decreased padding */
+    border: none;
+    outline: none;
+    background: #ecf0f3;
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    color: #31344b;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #dde3eb;
+}
+
+
+</style>
+<body>
+   <div class="container">
+    <h1>Please enter the details..</h1>
+
+    <div class="main">
+     <form action="">
+
+        <div class="form-input">
+             <label for="">Name</label><br>
+             <input type="text" placeholder="your Name:" id="name" required>
+        </div>
+
+        <div class="form-input">
+            <label for="">Email</label><br>
+            <input type="email" placeholder="your Email:" id="email" required>
+        </div>
+
+        <div class="form-input">
+            <label for="">Contact Number</label><br>
+            <input type="text" placeholder="optional... enter(+91).." id="contact">
+        </div>
+
+        <div class="form-input">
+            <label for="">Subject</label><br>
+            <input type="text" placeholder="Enter your subject:" id="subject">
+        </div>
+
+        <div class="form-input">
+            <label for="">Messages</label><br>
+            <textarea name="" id="message" cols="31" rows="4" placeholder="what you want to say..."></textarea>
+        </div>
+
+        <div class="form-input">
+            <button type="button" onclick="SendEmail()">Messege Sai</button>
+        </div>
+        
+     </form>
+
+    </div>
+    <!-- end main class -->
+   </div>
+    <!--end Conatiner class  -->
+    
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+
+
+    <script>
+        function SendEmail(){
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let conatact = document.getElementById("contact").value;
+          let subject = document.getElementById("subject").value;
+          let message = document.getElementById("message").value;
+        
+          let body = "The name  "+"<b>"+ name +"</b>"+" "+ "of bearing " +"  "+" Email:-  " + email +"  " + "and Contact Number:" + conatact +"  " +"is messeged you "+"<br/> Subject is:" +"<b>"+ subject +"</b>" + "<br/> Message is:" + message;
+        
+        Email.send({
+        SecureToken : "51b0eb4b-c861-40b0-9779-fd7df4564ac8",
+        To : 'sunnyhoopa@gmail.com',
+        From : "sunnyhoopa@gmail.com",
+        Subject : "message From Linkedin contact card",
+        Body : body
+         }).then(
+       message => alert(message)
+         );
+
+            
+        }
+    </script>
+
+ 
+</body>
+</html>
+
+
+<!-- 
+    06118D75AFE8FD91A5A8A2D9D2C7F938C025 is password
+    security token  51b0eb4b-c861-40b0-9779-fd7df4564ac8
+
+ -->

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Now coding for linked in -->
+    <!-- 
+        Links to add:
+        code chef code icon
+
+        code pen 
+
+        hackerrank
+
+        github
+
+        gmail page messege button
+     -->
+    <title>Coding Profile Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <style>
+        /* Add the following CSS for the dropdown menu */
+       .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ecf0f3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Original box shadow */
+  z-index: 1;
+}
+
+/* Modify box shadow to create a rectangular shape */
+.dropdown {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  padding: 10px;
+  text-decoration: none;
+  color: #31344b; /* Modified text color */
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* Modified hover background color */
+}
+
+    </style>
+</head>
+<body>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <div class="wrapper">
+        <div class="img-area">
+            <div class="inner-area">
+                <img src="sai.png" alt="sai Profile dp">
+            </div>
+        </div>
+        
+        <!-- <i class="fa-solid fa-house"></i> -->
+        <!-- <div class="icon arrow" onclick="sai()"><i class="fa fa-home" ></i></div> -->
+        
+        <div class="icon dots" onclick="toggleDropdown()"><i class="fas fa-ellipsis-v"></i>
+            <!-- Dropdown Menu -->
+            <div class="dropdown" id="dropdown">
+                <a href="main.html" class="dropdown-item">Certificates</a>
+                <a href="https://loading-page09.netlify.app" class="dropdown-item">Projects</a>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+        <div class="name">B.Sai Mahendra</div>
+        <div class="about">Student at KLEF [PRESENT]</div>
+        <div class="social-icons">
+            <a href="https://codepen.io/sunstromium" class="fb"><i class="fab fa-codepen" aria-hidden="true"></i></a>
+            <a href="https://www.codechef.com/users/klu_2200030548" class="insta" alt="codechef"><i class=" fas fa-code"></i></a>
+
+            <a href="https://github.com/sunstromium" class="twitter"><i class="fab fa-github"></i></a>
+            <!-- <a href="#" class="insta" alt="codechef"><i class=" fas fa-code"></i></a> -->
+            <a href="https://www.hackerrank.com/profile/h2200030548" class="yt"><i class="fab fa-hackerrank"></i></a>
+        </div>
+        <div class="buttons">
+            <button onclick="redirect()">Message</button>
+            <button onclick="reredir()">Connect</button>
+        </div>
+        <script>
+            function sai(){
+                window.location.href = "#";
+
+            }
+            function reredir() {
+                window.location.href = "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADXKQwQBs9a1qPRyPJ2PgDzhyfVWvVNbjFM&keywords=bejawada%20sai%20mahendra&origin=RICH_QUERY_SUGGESTION&position=1&searchId=0792a9a1-3bf3-42ee-9eed-98e4b43d64d4&sid=JXz&spellCorrectionEnabled=false";
+            }
+
+            function redirect() {
+                window.location.href = './sendEmail.html';
+            }
+
+            function toggleDropdown() {
+                var dropdown = document.getElementById("dropdown");
+                dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (event) {
+                if (!event.target.matches('.icon.dots')) {
+                    var dropdown = document.getElementById("dropdown");
+                    if (dropdown.style.display === "block") {
+                        dropdown.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
